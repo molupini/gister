@@ -1,0 +1,14 @@
+version: "2.4"
+
+services:
+  gister:
+    build:
+      context: .
+      target: dev
+      dockerfile: ./py.Dockerfile
+    volumes:
+      - ./src/.:/bin/app
+    env_file:
+      - ./.env/app.env
+    stdin_open: true
+    tty: true
