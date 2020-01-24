@@ -1,4 +1,4 @@
-# USER PUBLIC GIST SCRIPT
+# Gist...er
 
 Powered by Python and Docker.
 
@@ -11,8 +11,6 @@ You can:
   - See User Public Gist(s) 
   - Console Out New Gist
   - Saved to File for Persistance 
-  
-## Installation
 
 #### Install
 
@@ -28,7 +26,7 @@ $ git gist
 ```
 Third:
 ```sh
-$ git clone git@github.com:molupini/userPublicGist.git
+$ git clone git@github.com:molupini/gister.git
 ```
 
 Forth:
@@ -36,11 +34,7 @@ Forth:
 $ mkdir ./.env
 ```
 
-#### Author
-
-Making any change in your source file will update immediately.
-
-Before we begin, required environment variables:
+Fifth: Before we begin, required environment variables:
 ```sh
 $ vi ./.env/app.env
 AUTH_TOKEN=null
@@ -50,7 +44,7 @@ RATE=120
 ```
 
 
-#### Deploy & Execute 
+## Deploy & Execute 
 
 Easily done in a Docker container.
 Make required changes within Dockerfile + compose files if necessary. When ready, simply use docker-compose to build your environment.
@@ -93,6 +87,6 @@ MIT
 
    [mo]: <https://github.com/molupini>
    [linkIn]: <https://za.linkedin.com/in/mauriziolupini>
-   [git-repo-url]: <git@github.com:molupini/userPublicGist.git>
+   [git-repo-url]: <git@github.com:molupini/gister.git>
    [python]: <https://www.python.org/>
    [git]: <https://git-scm.com/>
