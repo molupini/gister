@@ -2,12 +2,12 @@
 FROM python:3.8-buster as base
 
 # ARGUMENTS
-ARG username=BretFisher
-ARG follow=true
+ARG USERNAME=BretFisher
+ARG FOLOW=true
 
 # ENVIRONMENTS
-ENV username=${username}
-ENV follow=${follow}
+ENV USERNAME=${USERNAME}
+ENV FOLLOW=${FOLLOW}
 ENV PORT=8080
 EXPOSE ${PORT}
 
@@ -18,11 +18,11 @@ WORKDIR /bin/app
 
 # dev
 FROM base as dev
-CMD ["gist.py", "run", ${username}, ${follow}] 
+CMD ["gist.py", "run"] 
 ENTRYPOINT [ "python" ]
-
+#  ${username}, ${follow}
 # prod
 FROM base as prod
 COPY ./src/. .
-CMD ["gist.py", "run", ${username}, ${follow}] 
+CMD ["gist.py", "run"] 
 ENTRYPOINT [ "python" ]

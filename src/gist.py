@@ -89,12 +89,16 @@ class Fetch(object):
 
 class Gist(object):
 
-    def run(self, username='BretFisher', follow='true', rate='120'):
+    def run(self):
 
         while(True):
             # CALL FETCH CLASS
-            fetch = Fetch()
             result = []
+            username = environ.get('USERNAME')
+            follow = environ.get('FOLLOW')
+            rate = environ.get('RATE')
+
+            fetch = Fetch()
 
             # READ FILE, CREATE IF EXCEPTION
             read = fetch.read(username)
@@ -139,7 +143,9 @@ class Gist(object):
             if follow != 'true':
                 break
             # ENSURE RATE IS LIMITED
-            time.sleep(120)
+            # debugging
+            # print({'info': f'end of loop {rate}'})
+            time.sleep(int(rate))
 
 
 if __name__ == '__main__':
